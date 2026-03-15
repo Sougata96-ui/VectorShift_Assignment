@@ -48,6 +48,7 @@ function App() {
         onConnect={onConnect}
         nodeTypes={nodeTypes}
         fitView
+        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
       >
         <MiniMap />
         <Controls />
