@@ -3,8 +3,8 @@ import React from 'react';
 import NodeBase from './NodeBase';
 
 const LLMNode = (props) => (
-  <NodeBase title="LLM" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
-    <div>LLM node content</div>
+  <NodeBase title="🤖 LLM" type="llm" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
+    <div>Language model processing</div>
   </NodeBase>
 );
 

@@ -26,9 +26,9 @@ const nodeTypes = {
 };
 
 const initialNodes = [
-  { id: '1', type: 'input', position: { x: 50, y: 50 }, data: {} },
-  { id: '2', type: 'text', position: { x: 250, y: 50 }, data: {} },
-  { id: '3', type: 'output', position: { x: 450, y: 50 }, data: {} },
+  { id: '1', type: 'input', position: { x: 50, y: 50 }, data: {}, selectable: true, draggable: true },
+  { id: '2', type: 'text', position: { x: 250, y: 50 }, data: {}, selectable: true, draggable: true },
+  { id: '3', type: 'output', position: { x: 450, y: 50 }, data: {}, selectable: true, draggable: true },
 ];
 const initialEdges = [];
 

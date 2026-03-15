@@ -5,7 +5,7 @@ import NodeBase from './NodeBase';
 const ApiNode = (props) => {
   const [endpoint, setEndpoint] = useState('');
   return (
-    <NodeBase title="API" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
+    <NodeBase title="🌐 API" type="api" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
       <input
         type="text"
         value={endpoint}

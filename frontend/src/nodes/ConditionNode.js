@@ -5,7 +5,7 @@ import NodeBase from './NodeBase';
 const ConditionNode = (props) => {
   const [condition, setCondition] = useState('');
   return (
-    <NodeBase title="Condition" inputs={[{ id: 'input' }]} outputs={[{ id: 'true' }, { id: 'false' }]} {...props}>
+    <NodeBase title="🔀 Condition" type="condition" inputs={[{ id: 'input' }]} outputs={[{ id: 'true' }, { id: 'false' }]} {...props}>
       <input
         type="text"
         value={condition}

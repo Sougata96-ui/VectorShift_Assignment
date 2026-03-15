@@ -3,7 +3,7 @@ import React from 'react';
 import NodeBase from './NodeBase';
 
 const LogNode = (props) => (
-  <NodeBase title="Log" inputs={[{ id: 'input' }]} {...props}>
+  <NodeBase title="📊 Log" type="log" inputs={[{ id: 'input' }]} {...props}>
     <div>Logs the input value</div>
   </NodeBase>
 );

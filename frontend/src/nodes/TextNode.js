@@ -37,7 +37,8 @@ const TextNode = (props) => {
 
   return (
     <NodeBase
-      title="Text"
+      title="📝 Text"
+      type="text"
       inputs={inputHandles}
       outputs={[{ id: 'output' }]}
       style={{ width: size.width, minHeight: size.height }}

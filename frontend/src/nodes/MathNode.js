@@ -5,7 +5,7 @@ import NodeBase from './NodeBase';
 const MathNode = (props) => {
   const [expression, setExpression] = useState('');
   return (
-    <NodeBase title="Math" inputs={[{ id: 'input1' }, { id: 'input2' }]} outputs={[{ id: 'result' }]} {...props}>
+    <NodeBase title="🔢 Math" type="math" inputs={[{ id: 'input1' }, { id: 'input2' }]} outputs={[{ id: 'result' }]} {...props}>
       <input
         type="text"
         value={expression}
