@@ -1,20 +1,10 @@
-// ApiNode.js
-import React, { useState } from 'react';
-import NodeBase from './NodeBase';
+import React from "react";
+import BaseNode from "./BaseNode";
 
-const ApiNode = (props) => {
-  const [endpoint, setEndpoint] = useState('');
+export default function ApiNode() {
   return (
-    <NodeBase title="🌐 API" type="api" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
-      <input
-        type="text"
-        value={endpoint}
-        onChange={e => setEndpoint(e.target.value)}
-        placeholder="API endpoint"
-        style={{ width: '100%' }}
-      />
-    </NodeBase>
+    <BaseNode title="API Node" inputs={["input"]} outputs={["output"]}>
+      <div>API call</div>
+    </BaseNode>
   );
-};
-
-export default ApiNode;
+}

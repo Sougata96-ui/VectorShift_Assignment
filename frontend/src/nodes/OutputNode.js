@@ -1,11 +1,12 @@
-// OutputNode.js
-import React from 'react';
-import NodeBase from './NodeBase';
+import React from "react";
+import BaseNode from "./BaseNode";
 
-const OutputNode = (props) => (
-  <NodeBase title="📤 Output" type="output" inputs={[{ id: 'input' }]} {...props}>
-    <div>Data output destination</div>
-  </NodeBase>
-);
+export default function OutputNode() {
+  return (
+    <BaseNode title="Output Node" inputs={["input"]}>
+      <div>Output result</div>
+    </BaseNode>
+  );
+}
 
 export default OutputNode;

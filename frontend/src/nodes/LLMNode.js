@@ -1,11 +1,12 @@
-// LLMNode.js
-import React from 'react';
-import NodeBase from './NodeBase';
+import React from "react";
+import BaseNode from "./BaseNode";
 
-const LLMNode = (props) => (
-  <NodeBase title="🤖 LLM" type="llm" inputs={[{ id: 'input' }]} outputs={[{ id: 'output' }]} {...props}>
-    <div>Language model processing</div>
-  </NodeBase>
-);
+export default function LLMNode() {
+  return (
+    <BaseNode title="LLM Node" inputs={["input"]} outputs={["output"]}>
+      <div>LLM processing</div>
+    </BaseNode>
+  );
+}
 
 export default LLMNode;

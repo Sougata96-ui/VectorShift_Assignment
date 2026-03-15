@@ -1,11 +1,12 @@
-// InputNode.js
-import React from 'react';
-import NodeBase from './NodeBase';
+import React from "react";
+import BaseNode from "./BaseNode";
 
-const InputNode = (props) => (
-  <NodeBase title="📥 Input" type="input" outputs={[{ id: 'output' }]} {...props}>
-    <div>Data input source</div>
-  </NodeBase>
-);
+export default function InputNode() {
+  return (
+    <BaseNode title="Input Node" outputs={["output"]}>
+      <input placeholder="Enter value" />
+    </BaseNode>
+  );
+}
 
 export default InputNode;
