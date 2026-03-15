@@ -14,7 +14,7 @@ const getVariables = (text) => {
 };
 
 const TextNode = (props) => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState('Hello {{name}}, this is a sample text. Edit me!');
   const [size, setSize] = useState({ width: 180, height: 60 });
   const variables = getVariables(text);
 
