@@ -32,6 +32,11 @@ This repository contains a full-stack solution for the VectorShift assignment. T
 
 See the `frontend/README.md` and `backend/README.md` for detailed setup instructions for each part.
 
+**Important:** To integrate frontend and backend, run both services simultaneously:
+- Start the backend first: `cd backend && uvicorn main:app --reload` (runs on http://localhost:8000)
+- Then start the frontend: `cd frontend && npm start` (runs on http://localhost:3000)
+- The frontend uses a proxy to communicate with the backend API.
+
 ## Usage
 
 - Run the backend and frontend as described in their respective README files.
