@@ -35,8 +35,15 @@ const initialEdges = [];
 function App() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds));
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    await submitPipeline(nodes, edges);
+    setIsSubmitting(false);
+  };
 
   return (
     <div className="app-container">
@@ -65,9 +72,10 @@ function App() {
       </ReactFlow>
       <button
         className="submit-button"
-        onClick={() => submitPipeline(nodes, edges)}
+        onClick={handleSubmit}
+        disabled={isSubmitting}
       >
-        Submit Pipeline
+        {isSubmitting ? 'Submitting...' : 'Submit Pipeline'}
       </button>
     </div>
   );

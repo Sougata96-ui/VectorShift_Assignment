@@ -12,6 +12,18 @@
   font-size: 14px;
   position: relative;
   overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Node Type Colors */
@@ -31,10 +43,26 @@
   background: rgba(79, 140, 255, 0.05);
 }
 
+.node-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #2c3e50;
+  text-align: center;
+  line-height: 1.4;
+}
+
 .node-content {
   padding: 16px 20px;
   position: relative;
   z-index: 1;
+  line-height: 1.5;
+}
+
+.node-content div {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .node-content textarea,
@@ -93,8 +121,16 @@
   background: linear-gradient(135deg, #3a7bd5 0%, #00b8e6 100%);
 }
 
-.submit-button:active {
-  transform: translateY(0);
+.submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-button:disabled:hover {
+  background: #ccc;
+  transform: none;
 }
 
 @media (max-width: 768px) {
