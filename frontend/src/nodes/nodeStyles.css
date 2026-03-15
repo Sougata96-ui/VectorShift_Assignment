@@ -1,35 +1,90 @@
 /* nodeStyles.css */
 .node-base {
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 2px solid #4f8cff;
-  border-radius: 12px;
-  padding: 16px;
-  min-width: 180px;
-  min-height: 80px;
-  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
-  font-family: 'Inter', sans-serif;
-  transition: box-shadow 0.2s;
+  border-radius: 16px;
+  padding: 20px;
+  min-width: 200px;
+  min-height: 100px;
+  box-shadow: 0 8px 32px rgba(79, 140, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
   font-size: 14px;
+  position: relative;
+  overflow: hidden;
 }
+
+.node-base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4f8cff, #00d4ff);
+  border-radius: 16px 16px 0 0;
+}
+
 .node-base:hover {
-  box-shadow: 0 4px 16px rgba(79,140,255,0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(79, 140, 255, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: #3a7bd5;
 }
+
 .node-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #4f8cff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
+
 .node-content {
-  margin: 8px 0;
+  margin: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.node-content textarea {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.node-content textarea:focus {
+  outline: none;
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 2px rgba(79, 140, 255, 0.2);
+}
+
+.node-content input {
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: inherit;
+  font-size: 13px;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.node-content input:focus {
+  outline: none;
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 2px rgba(79, 140, 255, 0.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .node-base {
-    min-width: 120px;
-    min-height: 60px;
-    padding: 12px;
+    min-width: 140px;
+    min-height: 80px;
+    padding: 16px;
     font-size: 12px;
   }
   .node-title {
@@ -39,9 +94,9 @@
 
 @media (max-width: 480px) {
   .node-base {
-    min-width: 100px;
-    min-height: 50px;
-    padding: 8px;
+    min-width: 120px;
+    min-height: 70px;
+    padding: 12px;
     font-size: 11px;
   }
   .node-title {
@@ -52,41 +107,100 @@
 /* Submit Button Styles */
 .submit-button {
   position: absolute;
-  right: 20px;
-  top: 20px;
-  padding: 10px 20px;
-  background: #4f8cff;
+  right: 30px;
+  top: 30px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #4f8cff 0%, #00d4ff 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.3);
 }
 
 .submit-button:hover {
-  background: #3a7bd5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 140, 255, 0.4);
+  background: linear-gradient(135deg, #3a7bd5 0%, #00b8e6 100%);
+}
+
+.submit-button:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
   .submit-button {
-    right: 10px;
-    top: 10px;
-    padding: 8px 16px;
-    font-size: 14px;
+    right: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .submit-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     right: auto;
     top: auto;
-    width: 80%;
-    max-width: 200px;
+    width: 85%;
+    max-width: 250px;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+/* App Container */
+.app-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #f4f8fb 0%, #e1e8ed 100%);
+  position: relative;
+}
+
+.app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(79, 140, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    height: 60px;
+  }
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    height: 50px;
+  }
+  .app-title {
+    font-size: 1.3rem;
   }
 }

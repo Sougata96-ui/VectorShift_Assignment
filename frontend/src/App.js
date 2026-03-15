@@ -39,7 +39,10 @@ function App() {
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds));
 
   return (
-    <div style={{ height: '100vh', background: '#f4f8fb' }}>
+    <div className="app-container">
+      <header className="app-header">
+        <h1 className="app-title">VectorShift Pipeline Editor</h1>
+      </header>
       <ReactFlow
         nodes={nodes}
         edges={edges}
