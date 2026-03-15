@@ -9,6 +9,7 @@
   box-shadow: 0 2px 8px rgba(79,140,255,0.08);
   font-family: 'Inter', sans-serif;
   transition: box-shadow 0.2s;
+  font-size: 14px;
 }
 .node-base:hover {
   box-shadow: 0 4px 16px rgba(79,140,255,0.18);
@@ -21,4 +22,71 @@
 }
 .node-content {
   margin: 8px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .node-base {
+    min-width: 120px;
+    min-height: 60px;
+    padding: 12px;
+    font-size: 12px;
+  }
+  .node-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .node-base {
+    min-width: 100px;
+    min-height: 50px;
+    padding: 8px;
+    font-size: 11px;
+  }
+  .node-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* Submit Button Styles */
+.submit-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.submit-button:hover {
+  background: #3a7bd5;
+}
+
+@media (max-width: 768px) {
+  .submit-button {
+    right: 10px;
+    top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    top: auto;
+    width: 80%;
+    max-width: 200px;
+  }
 }

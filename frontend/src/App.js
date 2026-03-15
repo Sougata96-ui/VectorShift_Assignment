@@ -1,6 +1,6 @@
 // App.js
-import React, { useState } from 'react';
-import ReactFlow, { addEdge, MiniMap, Controls, Background } from 'react-flow-renderer';
+import React from 'react';
+import ReactFlow, { addEdge, MiniMap, Controls, Background, useNodesState, useEdgesState } from 'reactflow';
 import InputNode from './nodes/InputNode';
 import OutputNode from './nodes/OutputNode';
 import LLMNode from './nodes/LLMNode';
@@ -33,8 +33,8 @@ const initialNodes = [
 const initialEdges = [];
 
 function App() {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds));
 
@@ -43,8 +43,8 @@ function App() {
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodesChange={setNodes}
-        onEdgesChange={setEdges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         nodeTypes={nodeTypes}
         fitView
@@ -54,7 +54,7 @@ function App() {
         <Background color="#aaa" gap={16} />
       </ReactFlow>
       <button
-        style={{ position: 'absolute', right: 20, top: 20, padding: '10px 20px', background: '#4f8cff', color: '#fff', border: 'none', borderRadius: 6, fontWeight: 600, cursor: 'pointer' }}
+        className="submit-button"
         onClick={() => submitPipeline(nodes, edges)}
       >
         Submit Pipeline
