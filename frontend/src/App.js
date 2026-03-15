@@ -12,7 +12,6 @@ import DelayNode from './nodes/DelayNode';
 import LogNode from './nodes/LogNode';
 import { submitPipeline } from './submit';
 import './nodes/nodeStyles.css';
-import ErrorBoundary from './ErrorBoundary';
 
 const nodeTypes = {
   input: InputNode,
@@ -27,9 +26,9 @@ const nodeTypes = {
 };
 
 const initialNodes = [
-  { id: '1', type: 'input', position: { x: 50, y: 50 }, data: {}, selectable: true, draggable: true },
-  { id: '2', type: 'text', position: { x: 250, y: 50 }, data: {}, selectable: true, draggable: true },
-  { id: '3', type: 'output', position: { x: 450, y: 50 }, data: {}, selectable: true, draggable: true },
+  { id: '1', type: 'input', position: { x: 150, y: 50 }, data: {}, selectable: true, draggable: true },
+  { id: '2', type: 'text', position: { x: 450, y: 50 }, data: {}, selectable: true, draggable: true },
+  { id: '3', type: 'output', position: { x: 750, y: 50 }, data: {}, selectable: true, draggable: true },
 ];
 const initialEdges = [];
 
@@ -47,40 +46,38 @@ function App() {
   };
 
   return (
-    <ErrorBoundary>
-      <div className="app-container">
-        <header className="app-header">
-          <h1 className="app-title">VectorShift Pipeline Editor</h1>
-          <div className="header-sections">
-            <div className="header-section">File</div>
-            <div className="header-section">Edit</div>
-            <div className="header-section">View</div>
-            <div className="header-section">Help</div>
-          </div>
-        </header>
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          nodeTypes={nodeTypes}
-          fitView
-          defaultViewport={{ x: 0, y: 0, zoom: 1 }}
-        >
-          <MiniMap />
-          <Controls />
-          <Background color="#aaa" gap={16} />
-        </ReactFlow>
-        <button
-          className="submit-button"
-          onClick={handleSubmit}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit Pipeline'}
-        </button>
-      </div>
-    </ErrorBoundary>
+    <div className="app-container">
+      <header className="app-header">
+        <h1 className="app-title">VectorShift Pipeline Editor</h1>
+        <div className="header-sections">
+          <div className="header-section">File</div>
+          <div className="header-section">Edit</div>
+          <div className="header-section">View</div>
+          <div className="header-section">Help</div>
+        </div>
+      </header>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView
+        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
+      >
+        <MiniMap />
+        <Controls />
+        <Background color="#aaa" gap={16} />
+      </ReactFlow>
+      <button
+        className="submit-button"
+        onClick={handleSubmit}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting...' : 'Submit Pipeline'}
+      </button>
+    </div>
   );
 }
 
