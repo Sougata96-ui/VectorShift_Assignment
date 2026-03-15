@@ -42,6 +42,12 @@ function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="app-title">VectorShift Pipeline Editor</h1>
+        <div className="header-sections">
+          <div className="header-section">File</div>
+          <div className="header-section">Edit</div>
+          <div className="header-section">View</div>
+          <div className="header-section">Help</div>
+        </div>
       </header>
       <ReactFlow
         nodes={nodes}

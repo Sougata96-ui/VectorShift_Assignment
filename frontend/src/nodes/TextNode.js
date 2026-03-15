@@ -48,7 +48,7 @@ const TextNode = (props) => {
         value={text}
         onChange={handleChange}
         style={{ width: '100%', minHeight: size.height - 20, resize: 'none' }}
-        placeholder="Enter text..."
+        placeholder="Click here to edit text. Use {{variable}} for handles."
       />
     </NodeBase>
   );
